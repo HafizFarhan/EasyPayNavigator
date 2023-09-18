@@ -1,0 +1,41 @@
+﻿.my-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-circle {
+    width: 25px;
+    height: 31px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #f79131;
+    border: none;
+    cursor: pointer;
+}
+
+
+.btn-left {
+    margin-right: auto;
+}
+
+
+.mb-3-custom {
+    margin-bottom: 15px;
+}
+
+
+.remember-me-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .remember-me-checkbox label {
+        margin-left: 5px;
+    }

@@ -1,0 +1,27 @@
+﻿@page
+@model Installment.Pages.Manage.InstallmentPlans.InstallmentPlanIndexModel
+@{
+}
+<h1>Installment Plans</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Plan ID</th>
+            <th>Product Name</th>
+            <th>Client Name</th>
+            <!-- Add other columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plan in Model.InstallmentPlans)
+        {
+            <tr>
+                <td>@plan.InstallmentPlanId</td>
+                <td>@plan.ProductName</td>
+                <td>@plan.ClientName</td>
+                <!-- Add other columns as needed -->
+            </tr>
+        }
+    </tbody>
+</table>

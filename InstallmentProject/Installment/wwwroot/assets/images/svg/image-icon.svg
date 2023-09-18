@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="active-image" width="50" height="50" viewBox="0 0 84.063 71.453">
+	<g id="Groupe_11724" data-name="Groupe 11724" transform="translate(-607 -834)">
+		<path id="Tracé_5145" data-name="Tracé 5145" d="M79.656,78.453H12.406A8.431,8.431,0,0,1,4,70.047V15.406A8.431,8.431,0,0,1,12.406,7h67.25a8.431,8.431,0,0,1,8.406,8.406V70.047A8.431,8.431,0,0,1,79.656,78.453Z" transform="translate(603 827)" fill="#fafafa" />
+		<ellipse id="Ellipse_799" data-name="Ellipse 799" cx="6.5" cy="6" rx="6.5" ry="6" transform="translate(665 847)" fill="#e0e0e0" />
+		<path id="Tracé_5146" data-name="Tracé 5146" d="M31.526,16,9,49.625H54.053Z" transform="translate(609.516 836.914)" fill="#e0e0e0" />
+		<path id="Tracé_5147" data-name="Tracé 5147" d="M39.383,22,23,43.016H55.765Z" transform="translate(624.186 843.523)" fill="#e0e0e0" />
+		
+	</g>
+	<style>
+		.active-image:hover {
+		fill: #ffe7d0;
+		stroke: #f79131;
+		<!--background-color: #ffe7d0;-->
+		}
+	</style>
+</svg>

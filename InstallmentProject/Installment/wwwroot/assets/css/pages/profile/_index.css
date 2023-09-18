@@ -1,0 +1,19 @@
+﻿/* Center the profile-settings div */
+.profile-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 65vh; *//* Set the height to fill the entire viewport */
+}
+
+.page-thumbnail{
+    margin-bottom:35px;
+}
+
+.card-name {
+    margin-bottom: 15px;
+}
+
+.form-control.fw-semibold.custom-width {
+    font-size: 16px;
+}

@@ -1,0 +1,32 @@
+﻿@page
+@model Installment.Pages.Manage.InstallmentPayments.EditModel
+@{
+}
+<h2>Edit Payment</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Payment.PaymentID" />
+    <div class="form-group">
+        <label for="Name">Payment Date</label>
+        <input type="text" class="form-control" id="Name" asp-for="Payment.PaymentDate">
+    </div>
+    <div class="form-group">
+        <label for="Price">Payment Amount</label>
+        <input type="text" class="form-control" id="Price" asp-for="Payment.Amount">
+    </div>
+    <div class="form-group">
+        <label for="Description">Payment Status</label>
+        <textarea class="form-control" id="Description" asp-for="Payment.Status"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Payment_InstallmentPlan_InstallmentPlanId">Installment Plan</label>
+        <select class="form-control" id="Payment_InstallmentPlan_InstallmentPlanId" asp-for="Payment.InstallmentPlan.InstallmentPlanId">
+            @foreach (var plan in Model.InstallmentPlans)
+            {
+                <option value="@plan.InstallmentPlanId">@plan.AdvancePayment</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-page="./InstallmentPaymentIndex" class="btn btn-secondary">Back to List</a>
+</form>

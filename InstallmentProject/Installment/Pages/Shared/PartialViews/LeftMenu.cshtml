@@ -1,0 +1,122 @@
+﻿<nav class="sidebar">
+    <div class="sidebar-header">
+
+        <a href="#" class="sidebar-brand" style="font-size:12px;font-weight:normal">
+            <table>
+                <tr>
+                   
+                    <td>
+                        <span style="color:black; font-weight:bold">
+                            Installment
+                        </span>
+                        
+                        
+                    </td>
+                </tr>
+            </table>
+
+        </a>
+        <div class="sidebar-toggler not-active">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="sidebar-body">
+        <ul class="nav">
+            @*<li class="nav-item nav-category">Main</li>*@
+            <li class="nav-item main-item" id="dashboardNav">
+                <a href="/Index" class="nav-link " onclick="handleDashboardClick()">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title fw-normal">Dashboard</span>
+                </a>
+            </li>
+            
+            
+
+            <li class="nav-item main-item" id="productsNav">
+                <a class="nav-link" onclick="toggleProductsSubMenu();">
+                    <i class="link-icon" data-feather="package"></i>
+                    <span class="link-title fw-normal" onclick="navigateMe('/Manage/Product/ProductIndex')">Products</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="products">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="/Manage/Product/ProductIndex" class="nav-link fw-normal" id="productsListNav">
+                                Products
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </li>
+            <li class="nav-item main-item" id="productsNav">
+                <a class="nav-link" onclick="toggleProductsSubMenu();">
+                    <i class="link-icon" data-feather="package"></i>
+                    <span class="link-title fw-normal" onclick="navigateMe('/Manage/Client/ClientIndex')">Clients</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="products">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="/Manage/Client/ClientIndex" class="nav-link fw-normal" id="productsListNav">
+                                Clients
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </li>
+            <li class="nav-item main-item" id="productsNav">
+                <a class="nav-link" onclick="toggleProductsSubMenu();">
+                    <i class="link-icon" data-feather="package"></i>
+                    <span class="link-title fw-normal" onclick="navigateMe('/Manage/InstallmentPayments/InstallmentPaymentIndex')">Payments</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="products">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="/Manage/InstallmentPayments/InstallmentPaymentIndex" class="nav-link fw-normal" id="productsListNav">
+                                Payments
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </li>
+             <li class="nav-item main-item" id="productsNav">
+                <a class="nav-link" onclick="toggleProductsSubMenu();">
+                    <i class="link-icon" data-feather="package"></i>
+                    <span class="link-title fw-normal" onclick="navigateMe('/Manage/InstallmentPlans/InstallmentPlanIndex')">Plans</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="products">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="/Manage/InstallmentPlans/InstallmentPlanIndex" class="nav-link fw-normal" id="productsListNav">
+                                Plans
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </li>
+          
+           
+
+            
+           
+            <li class="nav-item main-item" id="settingsNav">
+                <a class="nav-link" data-bs-toggle="collapse" href="/Chat" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="mail"></i>
+                    <span class="link-title fw-normal">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

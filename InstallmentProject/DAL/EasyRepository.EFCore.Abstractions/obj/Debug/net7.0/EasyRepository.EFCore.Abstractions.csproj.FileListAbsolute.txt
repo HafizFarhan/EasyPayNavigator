@@ -1,0 +1,12 @@
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\bin\Debug\net7.0\EasyRepository.EFCore.Abstractions.deps.json
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\bin\Debug\net7.0\EasyRepository.EFCore.Abstractions.dll
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\bin\Debug\net7.0\EasyRepository.EFCore.Abstractions.pdb
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\EasyRepository.EFCore.Abstractions.csproj.AssemblyReference.cache
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\EasyRepository.EFCore.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\EasyRepository.EFCore.Abstractions.AssemblyInfoInputs.cache
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\EasyRepository.EFCore.Abstractions.AssemblyInfo.cs
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\EasyRepository.EFCore.Abstractions.csproj.CoreCompileInputs.cache
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\EasyRepository.EFCore.Abstractions.dll
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\refint\EasyRepository.EFCore.Abstractions.dll
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\EasyRepository.EFCore.Abstractions.pdb
+C:\Projects\MOVD\src\DAL\EasyRepository.EFCore.Abstractions\obj\Debug\net7.0\ref\EasyRepository.EFCore.Abstractions.dll

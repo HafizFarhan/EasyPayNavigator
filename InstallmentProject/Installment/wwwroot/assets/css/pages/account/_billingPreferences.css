@@ -1,0 +1,24 @@
+﻿.billing-details {
+    margin-top: 8px;
+}
+/* Set Caption to 14px light */
+.col-md-12.my-4 span {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+/* Add space in between 30px */
+.col-md-12.my-4 {
+    margin-bottom: 30px;
+}
+
+/* Set Company name to 16px Semibold */
+.form-label.fw-bold.fs-5 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Add space in between 8px */
+.form-control.my-2 {
+    margin-bottom: 8px;
+}

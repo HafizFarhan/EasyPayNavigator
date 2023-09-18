@@ -1,0 +1,21 @@
+﻿
+td[data-field="score"] {
+    cursor: pointer;
+}
+
+.score-progress {
+    height: 10px;
+    border-radius: 10px;
+}
+
+.score-progress-bar {
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.light-bg {
+    background-color: #f5f5f5;
+}
+
+
+

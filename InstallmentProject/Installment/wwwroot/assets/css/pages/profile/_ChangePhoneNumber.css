@@ -1,0 +1,17 @@
+﻿
+
+/* For larger screens (e.g., screens wider than 768px) */
+@media (min-width: 768px) {
+    .iti {
+        width: 351px !important;
+    }
+}
+
+/* For smaller screens (e.g., screens 768px and narrower) */
+@media (max-width: 768px) {
+    .iti {
+        width: 100%; /* Use 100% width for relative sizing */
+        max-width: 351px; /* Set a maximum width of 351px */
+    }
+}
+

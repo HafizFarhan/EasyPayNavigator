@@ -1,0 +1,140 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Generic\\EasyRepository.EFCore.Generic.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Abstractions\\EasyRepository.EFCore.Abstractions.csproj": {
+      "version": "3.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Abstractions\\EasyRepository.EFCore.Abstractions.csproj",
+        "projectName": "EasyRepository.EFCore.Abstractions",
+        "projectPath": "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Abstractions\\EasyRepository.EFCore.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\Techflo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Techflo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoFilterer": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Generic\\EasyRepository.EFCore.Generic.csproj": {
+      "version": "3.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Generic\\EasyRepository.EFCore.Generic.csproj",
+        "projectName": "EasyRepository.EFCore.Generic",
+        "projectPath": "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Generic\\EasyRepository.EFCore.Generic.csproj",
+        "packagesPath": "C:\\Users\\Techflo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Generic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Techflo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Abstractions\\EasyRepository.EFCore.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\Techflo\\Downloads\\src\\DAL\\EasyRepository.EFCore.Abstractions\\EasyRepository.EFCore.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
