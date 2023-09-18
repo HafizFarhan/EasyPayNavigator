@@ -7,8 +7,7 @@ namespace Installment.Entities
     {
         [Key]
         public int InstallmentPlanId { get; set; }
-        public int ProductId { get; set; }
-        public int ClientId { get; set; }
+       
         public decimal TotalPrice { get; set; }
         public decimal AdvancePayment { get; set; }
         public string ProductName { get; set; }
