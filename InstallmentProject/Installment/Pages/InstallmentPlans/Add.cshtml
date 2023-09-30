@@ -1,0 +1,30 @@
+﻿@page
+@model Installment.Pages.InstallmentPlans.AddModel
+@{
+}
+<form method="post">
+    <div class=“form-group”>
+        <label asp-for="plan.ProductName">Select a Product</label>
+        <select class="form-control" asp-for="plan.ProductName" asp-items="@Model.ProductItems">
+            <option value=“”>Select a Product </option>
+        </select>
+    </div>
+
+    <div class=“form-group”>
+        <label asp-for="plan.ClientName">Select a Client</label>
+        <select class="form-control" asp-for="plan.ClientName" asp-items="@Model.ClientItems">
+            <option value=“”>Select a Client </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="plan.TotalPrice">Total Price</label>
+        <input type="text" class="form-control" id="TotalPrice" name="plan.TotalPrice">
+    </div>
+    <div class="form-group">
+        <label asp-for="plan.AdvancePayment">Advance Payment</label>
+        <input type="text" class="form-control" id="AdvancePayment" name="plan.AdvancePayment">
+    </div>
+    <br />
+ 
+    <button type="submit" class="btn btn-primary">Add Plan</button>
+</form>

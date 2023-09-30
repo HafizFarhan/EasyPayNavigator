@@ -1,3 +1,6 @@
+using EasyRepository.EFCore.Abstractions;
+using EasyRepository.EFCore.Generic;
+using Installment.Context;
 using Installment.Helpers;
 using Installment.Helpers.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -12,13 +15,17 @@ namespace Installment
 
             // Register IHttpContextAccessor
             builder.Services.AddHttpContextAccessor();
-
+            // Register IRepository and IUnitOfWork
+            //builder.Services.AddScoped<IRepository, Repository>();
+          
             // Add services to the container.
             builder.Services.AddRazorPages();
             // Add Entity Framework Core with your connection string
             builder.Services.AddDbContext<InstallmentDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddScoped<IPageModelHelper, PageModelHelper>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.ApplyEasyRepository<InstallmentDbContext>();
             var app = builder.Build();
 
             

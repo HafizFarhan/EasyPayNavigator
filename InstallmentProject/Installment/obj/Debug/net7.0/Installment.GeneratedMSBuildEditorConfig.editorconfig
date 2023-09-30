@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Techflo\InstammentPlanner\InstallmentProject\Installment
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Clients/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Clients/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Clients/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,52 +36,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/Client/ClientIndex.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXENsaWVudFxDbGllbnRJbmRleC5jc2h0bWw=
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/InstallmentPayments/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdGFsbG1lbnRQYXltZW50c1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/Client/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXENsaWVudFxDcmVhdGUuY3NodG1s
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/InstallmentPayments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdGFsbG1lbnRQYXltZW50c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/Client/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXENsaWVudFxFZGl0LmNzaHRtbA==
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/InstallmentPayments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdGFsbG1lbnRQYXltZW50c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/InstallmentPayments/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXEluc3RhbGxtZW50UGF5bWVudHNcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/InstallmentPlans/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdGFsbG1lbnRQbGFuc1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/InstallmentPayments/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXEluc3RhbGxtZW50UGF5bWVudHNcRWRpdC5jc2h0bWw=
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/InstallmentPlans/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdGFsbG1lbnRQbGFuc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/InstallmentPayments/InstallmentPaymentIndex.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXEluc3RhbGxtZW50UGF5bWVudHNcSW5zdGFsbG1lbnRQYXltZW50SW5kZXguY3NodG1s
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/InstallmentPlans/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdGFsbG1lbnRQbGFuc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/InstallmentPlans/InstallmentPlanIndex.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXEluc3RhbGxtZW50UGxhbnNcSW5zdGFsbG1lbnRQbGFuSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/Product/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXFByb2R1Y3RcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/Product/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXFByb2R1Y3RcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/Product/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXFByb2R1Y3RcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Manage/Product/ProductIndex.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlXFByb2R1Y3RcUHJvZHVjdEluZGV4LmNzaHRtbA==
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Invoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52b2ljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Products/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Techflo/InstammentPlanner/InstallmentProject/Installment/Pages/Shared/PartialViews/Footer.cshtml]

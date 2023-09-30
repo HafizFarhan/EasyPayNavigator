@@ -1102,7 +1102,7 @@
       },
       "EasyRepository.EFCore.Abstractions/3.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoFilterer": "2.13.0",
           "Microsoft.Data.SqlClient": "5.1.1",
@@ -1117,7 +1117,7 @@
       },
       "EasyRepository.EFCore.Generic/3.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "EasyRepository.EFCore.Abstractions": "3.0.0",
           "Microsoft.Data.SqlClient": "5.1.1"

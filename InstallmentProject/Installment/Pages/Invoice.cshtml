@@ -1,0 +1,36 @@
+﻿@page
+@model Installment.Pages.InvoiceModel
+@{
+}
+<h1>Invoice</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Client Name</th>
+            <th>Total Price</th>
+            <th>Advance Payment</th>
+            <th>No. of Installments</th>
+            <th>Total Paid</th>
+            <th>Remaining Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plan in Model.plans)
+        {
+            <tr>
+                <td>@plan.ProductName</td>
+                <td>@plan.ClientName</td>
+                <td>@plan.TotalPrice</td>
+                <td>@plan.AdvancePayment</td>
+                <td>@plan.NoInstallments</td>
+                <td>@plan.TotalPaid</td>
+                <td>@plan.RemainingAmount</td>
+                <td>@Model.InstallmentPayments.RecentAmount</td>
+                <td>@plan.Date</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

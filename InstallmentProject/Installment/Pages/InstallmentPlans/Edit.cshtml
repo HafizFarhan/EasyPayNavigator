@@ -1,0 +1,29 @@
+﻿@page
+@model Installment.Pages.InstallmentPlans.EditModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+        <label for="ProductName">Product Name</label>
+        <input type="text" class="form-control" id="ProductName" name="ProductName" asp-for="plan.ProductName">
+    </div>
+    <div class="form-group">
+        <label for="ClientName">Client Name</label>
+        <input type="text" class="form-control" id="ClientName" name="ClientName" asp-for="plan.ClientName">
+    </div>
+    <div class="form-group">
+        <label for="TotalPrice">Total Price</label>
+        <input type="number" class="form-control" id="TotalPrice" name="TotalPrice" asp-for="plan.TotalPrice">
+    </div>
+    <div class="form-group">
+        <label for="AdvancePayment">Advance Payment</label>
+        <input type="number" class="form-control" id="AdvancePayment" name="AdvancePayment" asp-for="plan.AdvancePayment">
+    </div>
+    <div class="form-group">
+        <label for="CompanyId">Company Id</label>
+        <input type="number" class="form-control" id="CompanyId" name="CompanyId" asp-for="plan.CompanyId">
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

@@ -30,4 +30,8 @@
     <ProjectReference Include="..\..\..\Downloads\src\DAL\EasyRepository.EFCore.Generic\EasyRepository.EFCore.Generic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Manage\" />
+  </ItemGroup>
+
 </Project>
