@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Manage\**" />
     <Compile Remove="Pages\NewFolder1\**" />
+    <Content Remove="Pages\Manage\**" />
     <Content Remove="Pages\NewFolder1\**" />
+    <EmbeddedResource Remove="Pages\Manage\**" />
     <EmbeddedResource Remove="Pages\NewFolder1\**" />
+    <None Remove="Pages\Manage\**" />
     <None Remove="Pages\NewFolder1\**" />
   </ItemGroup>
 
@@ -26,12 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Downloads\src\DAL\EasyRepository.EFCore.Abstractions\EasyRepository.EFCore.Abstractions.csproj" />
-    <ProjectReference Include="..\..\..\Downloads\src\DAL\EasyRepository.EFCore.Generic\EasyRepository.EFCore.Generic.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Manage\" />
+    <ProjectReference Include="..\DAL\EasyRepository.EFCore.Abstractions\EasyRepository.EFCore.Abstractions.csproj" />
+    <ProjectReference Include="..\DAL\EasyRepository.EFCore.Generic\EasyRepository.EFCore.Generic.csproj" />
   </ItemGroup>
 
 </Project>
