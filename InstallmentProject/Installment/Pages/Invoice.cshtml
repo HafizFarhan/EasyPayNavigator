@@ -3,37 +3,114 @@
 @{
     int seriesNumber = 1; // Initialize the series number
 }
-<h1>Invoice</h1>
 
-<table class="table">
-    <thead>
+<style>
+    .colored-row {
+        background-color: #808080; /* Set your desired background color here */
+    }
+</style>
+<img src="~/assets/images/company.png" />
+<table>
+    
         <tr>
-            <th>Series No</th>
-            <th>Product</th>
-            <th>Client</th>
-            <th>Price</th>
-            <th>Advance</th>
-            <th>Installments</th>
-            <th>Paid</th>
-            <th>Remaining</th>
+            <td>Company Name</td>
+            <td>25 TechTown</td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var plan in Model.plans)
-        {
-            <tr>
-                <td>@(seriesNumber++)</td>
-                <td>@plan.ProductName</td>
-                <td>@plan.ClientName</td>
-                <td>@plan.TotalPrice</td>
-                <td>@plan.AdvancePayment</td>
-                <td>@plan.NoInstallments</td>
-                <td>@plan.TotalPaid</td>
-                <td>@plan.RemainingAmount</td>
-                
-                
-            </tr>
-        }
-    </tbody>
+    
+    
+    
+    <tr>
+    
+        <td>Phone#</td>
+        <td>051-984527782</td>
+    </tr>
+    <tr>
+        <td>Invoice#</td>
+        <td>@(seriesNumber++)</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>25techtown@gmail.com</td>
+    </tr>
 </table>
+<div style="margin-bottom: 20px;">
+   
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Invoice Details</th>                         
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var plan in Model.plans)
+            {
+                <tr>
+                    <td>Product Name</td>
+                    <td>@plan.ProductName</td>
+                </tr>
+                <tr>
+                    <td>Client Name</td>
+                    <td>@plan.ClientName</td>
+                </tr>
+                <tr>
+                    <td>Advance Payment</td>
+                    <td>@plan.AdvancePayment</td>
+                </tr>
+                <tr>
+                    <td>Installments Paid</td>
+                    <td>@plan.NoInstallments</td>
+                </tr>
+                    
+                     
+             
+            }
+        </tbody>
+    </table>
+</div>
 
+<div>
+    <h2>Payment History</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var payment in Model.InstallmentPayments)
+            {
+                <tr>
+                    <td>@payment.RecentAmount</td>
+                    <td>@payment.Date.ToShortDateString()</td>
+                    <td>@payment.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    
+        <table class="table table-bordered ">
+            <tbody>
+                @foreach (var plan in Model.plans)
+                {
+                <tr class="colored-row">
+                        <td >Total Price</td>
+                        <td>@plan.TotalPrice</td>
+                    </tr>
+                <tr class="colored-row">
+                        <td>Total Paid</td>
+                        <td>@plan.TotalPaid</td>
+                    </tr>
+                <tr class="colored-row">
+                        <td>Remaining Amount</td>
+                        <td>@plan.RemainingAmount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+   
+</div>

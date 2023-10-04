@@ -44,7 +44,12 @@ namespace Installment.Pages
     RemainingAmount = group.Plan.TotalPrice - (group.Payments.Sum(payment => payment.RecentAmount) + group.Plan.AdvancePayment)
     })
     .ToListAsync();
-            
+            // Load related InstallmentPayments
+            InstallmentPayments = await _unitOfWork.Repository
+                .GetQueryable<InstallmentPayment>()
+                .Where(payment => payment.InstallmentPlanId == id)
+                .ToListAsync();
+
             return Page();
         }
     }
