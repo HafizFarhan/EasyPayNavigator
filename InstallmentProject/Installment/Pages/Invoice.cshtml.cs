@@ -16,11 +16,12 @@ namespace Installment.Pages
         }
         public List<InstallmentPlan> plans { get; set; }
         public List<InstallmentPayment> InstallmentPayments { get; set; }
-        public async Task<IActionResult> OnGetAsync()
+       
+        public async Task<IActionResult> OnGetAsync(int id)
         {
                 plans = await _unitOfWork.Repository
     .GetQueryable<InstallmentPlan>()
-    .Where(m => m.CompanyId == 1)
+    .Where(m => m.Id == id)
     .GroupJoin(
     _unitOfWork.Repository.GetQueryable<InstallmentPayment>(),
     plan => plan.Id,
@@ -43,6 +44,7 @@ namespace Installment.Pages
     RemainingAmount = group.Plan.TotalPrice - (group.Payments.Sum(payment => payment.RecentAmount) + group.Plan.AdvancePayment)
     })
     .ToListAsync();
+            
             return Page();
         }
     }
