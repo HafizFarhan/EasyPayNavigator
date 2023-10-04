@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Installment
 {
@@ -6,7 +9,11 @@ namespace Installment
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AddPageRoute("/Login", "");
+                });
             // Add your services and DbContext configurations here
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -30,13 +37,20 @@ namespace Installment
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
-                
+                endpoints.MapRazorPages(); 
+                endpoints.MapFallbackToPage("/Login");
+            });
 
-
-
+            // Define a default route for the login page
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path == "/")
+                {
+                    context.Response.Redirect("/Login");
+                    return;
+                }
+                await next();
             });
         }
-
     }
 }

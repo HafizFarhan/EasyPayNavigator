@@ -33,6 +33,7 @@
             <th>Email</th>
             <th>Phone Number</th>
             <th>CompanyId</th>
+            <th>Invoice</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -44,6 +45,9 @@
                 <td>@client.Email</td>
                 <td>@client.Phone</td>
                 <td>@client.CompanyId</td>
+                <td>
+                    <a asp-page="./Invoice" asp-route-clientId="@client.Id">View</a>
+                </td>
                 <td>
                     <div class="row">
                         <div class="col-md-6">

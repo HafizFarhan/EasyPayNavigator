@@ -1,6 +1,5 @@
 ﻿@using Newtonsoft.Json;
 
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,31 +8,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>@ViewData["Title"] - Installment</title>
+    <title>@ViewData["Title"] Installment</title>
     @await Html.PartialAsync("~/Pages/Shared/PartialViews/Styles.cshtml")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
-    <!-- Custom overlay -->
-     <div class="custom-overlay" id="customOverlay"></div>
-    <!-- End of Custom overlay -->
+    @{
+        var showLayout = !Context.Request.Path.Value.StartsWith("/Login");
+        
+    }
 
-    <!-- Top notification div -->
-    <div class="alert-container" id="topNotifications"> </div>
-    <!-- End top notification div -->
+    @if (showLayout)
+    {
+        <!-- Custom overlay -->
+        <div class="custom-overlay" id="customOverlay"></div>
+        <!-- End of Custom overlay -->
+        <!-- Top notification div -->
+        <div class="alert-container" id="topNotifications"> </div>
+        <!-- End top notification div -->
 
-    <div class="main-wrapper">
-        @await Html.PartialAsync("~/Pages/Shared/PartialViews/LeftMenu.cshtml")
-        <div class="page-wrapper">
-            @await Html.PartialAsync("~/Pages/Shared/PartialViews/TopNavBar.cshtml")
-            <div class="page-content">
-                @RenderBody()
+        <div class="main-wrapper">
+            @await Html.PartialAsync("~/Pages/Shared/PartialViews/LeftMenu.cshtml")
+            <div class="page-wrapper">
+                @await Html.PartialAsync("~/Pages/Shared/PartialViews/TopNavBar.cshtml")
+                <div class="page-content">
+                    @RenderBody()
+                </div>
+                @await Html.PartialAsync("~/Pages/Shared/PartialViews/Footer.cshtml")
             </div>
-            @await Html.PartialAsync("~/Pages/Shared/PartialViews/Footer.cshtml")
         </div>
-    </div>
 
-    @await Html.PartialAsync("~/Pages/Shared/PartialViews/Scripts.cshtml")
-    @await RenderSectionAsync("Scripts", required: false)
+        @await Html.PartialAsync("~/Pages/Shared/PartialViews/Scripts.cshtml")
+        @await RenderSectionAsync("Scripts", required: false)
+    }
+    else
+    {
+        @RenderBody()
+    }
 </body>
 </html>

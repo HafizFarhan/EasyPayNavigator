@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Manage\**" />
     <Compile Remove="Pages\NewFolder1\**" />
+    <Content Remove="Pages\Manage\**" />
     <Content Remove="Pages\NewFolder1\**" />
+    <EmbeddedResource Remove="Pages\Manage\**" />
     <EmbeddedResource Remove="Pages\NewFolder1\**" />
+    <None Remove="Pages\Manage\**" />
     <None Remove="Pages\NewFolder1\**" />
   </ItemGroup>
 
@@ -21,17 +25,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Downloads\src\DAL\EasyRepository.EFCore.Abstractions\EasyRepository.EFCore.Abstractions.csproj" />
-    <ProjectReference Include="..\..\..\Downloads\src\DAL\EasyRepository.EFCore.Generic\EasyRepository.EFCore.Generic.csproj" />
+    <ProjectReference Include="..\DAL\EasyRepository.EFCore.Abstractions\EasyRepository.EFCore.Abstractions.csproj" />
+    <ProjectReference Include="..\DAL\EasyRepository.EFCore.Generic\EasyRepository.EFCore.Generic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Manage\" />
+    <Folder Include="Pages\Login\" />
   </ItemGroup>
 
 </Project>
