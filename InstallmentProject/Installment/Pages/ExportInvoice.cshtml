@@ -1,0 +1,124 @@
+﻿@page "{Id:int}/{CompanyId:int}"
+@model Installment.Pages.InvoiceModel
+@{
+    Layout = null;
+}
+
+@{
+    int seriesNumber = 1; // Initialize the series number
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="data:image/png;base64,@Convert.ToBase64String(@Model.Companies.LogoImage)" alt="Company Logo" class="img-fluid" />
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h4>Company Details</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Company Name</td>
+                        <td>@Model.Companies.CompanyName</td>
+                    </tr>
+                    <tr>
+                        <td>Phone#</td>
+                        <td>@Model.Companies.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>@Model.Companies.Email</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>@Model.Companies.Address</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Invoice Details</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Invoice#</td>
+                        <td>@(seriesNumber++)</td>
+                    </tr>
+                    <tr>
+                        <td>Product Name</td>
+                        <td>@Model.plans.ProductName</td>
+                    </tr>
+                    <tr>
+                        <td>Client Name</td>
+                        <td>@Model.plans.ClientName</td>
+                    </tr>
+                    <tr>
+                        <td>Advance Payment</td>
+                        <td>@Model.plans.AdvancePayment</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h4>Payment History</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var payment in Model.InstallmentPayments)
+                    {
+                        <tr>
+                            <td>@payment.RecentAmount</td>
+                            <td>@payment.Date.ToShortDateString()</td>
+                            <td>@payment.Status</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h4>Summary</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Total Price</td>
+                        <td>@Model.plans.TotalPrice</td>
+                    </tr>
+                    <tr>
+                        <td>Total Paid</td>
+                        <td>@Model.installmentPlans.TotalPaid</td>
+                    </tr>
+                    <tr>
+                        <td>Remaining Amount</td>
+                        <td>@Model.installmentPlans.RemainingAmount</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+   
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+

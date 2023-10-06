@@ -1,0 +1,75 @@
+﻿@page
+@model Installment.Pages.Companies.IndexModel
+@{
+}
+<h1>Company List</h1>
+<a asp-page="./Add" class="ml-auto" style="display: flex;
+        justify-content:end;
+        align-items: center;">
+    <button type="submit" class="icon-button">
+        <i data-feather="plus-circle"></i>
+        Add Company
+    </button>
+</a>
+<style>
+    .icon-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        font-size: 16px; /* Adjust the font size to control the size of the icon */
+        color: var(--bs-primary); /* Adjust the color as needed */
+    }
+
+        .icon-button:focus {
+            outline: none;
+        }
+</style>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Logo Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var company in Model.Companies)
+        {
+            <tr>
+                <td style="white-space: pre-wrap;">@company.CompanyName</td>
+                <td style="white-space: pre-wrap;">@company.Email</td>
+                <td style="white-space: pre-wrap;">@company.Phone</td>
+                <td style="white-space: pre-wrap;">@company.Address</td>
+                <td>
+                    <img src="data:image/png;base64,@(company.LogoImage != null ? Convert.ToBase64String(company.LogoImage) : "")" 
+                    alt="Company Logo" 
+
+                         style="width: 100px; height: auto;" />
+                </td>
+                <td>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@company.Id">
+                                <button type="submit" class="icon-button">
+                                    <i data-feather="trash-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <a asp-page="./Edit" asp-page-handler="Update" asp-route-id="@company.Id">
+                                <button type="submit" class="icon-button">
+                                    <i data-feather="edit-2"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

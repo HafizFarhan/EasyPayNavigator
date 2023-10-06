@@ -76,7 +76,7 @@
                             </a>
                         </div>
                         <div class="col-md-8">
-                            <a asp-page="/InstallmentPayments/Index" asp-route-InstallmentPlanId="@plan.Id" class="btn btn-primary btn-sm">
+                            <a asp-page="/InstallmentPayments/Index"  asp-route-InstallmentPlanId="@plan.Id" class="btn btn-primary btn-sm">
                                 View Payment
                             </a>
                         </div>
@@ -89,7 +89,7 @@
                             
                         </div>
                         <div class="col-md-8">
-                            <a asp-page="/Invoice" asp-route-Id="@plan.Id" class="btn btn-primary btn-sm">
+                            <a asp-page="/Invoice" asp-route-Id="@plan.Id" asp-route-CompanyId="@plan.CompanyId" class="btn btn-primary btn-sm">
                                 View Invoice
                             </a>
                         </div>

@@ -1,0 +1,31 @@
+﻿@page
+@model Installment.Pages.Companies.AddModel
+@{
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="company.CompanyName">Company Name</label>
+        <input type="text" class="form-control" id="CompanyName" asp-for="company.CompanyName">
+    </div>
+    <div class="form-group">
+        <label asp-for="company.Email">Company Email</label>
+        <input type="text" class="form-control" id="Email" asp-for="company.Email">
+    </div>
+    <div class="form-group">
+        <label asp-for="company.Phone">Company PhoneNo</label>
+        <input type="number" class="form-control" id="Phone" asp-for="company.Phone">
+    </div>
+    <div class="form-group">
+        <label asp-for="company.Address">Company Address</label>
+        <input type="text" class="form-control" id="Address" asp-for="company.Address">
+    </div>
+    
+    <div class="form-group">
+        <b><label for="LogoImage">Add Company Logo</label></b>
+        <br />
+        <input type="file" class="form-control-file" id="LogoImage" name="LogoImageFile">
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Add Company</button>
+</form>

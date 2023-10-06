@@ -3,7 +3,7 @@
     public sealed class Global
     {
         private static Global instance = null;
-        private const int CompanyId = 1;
+        private const int CompanyId = 3;
         public static Global Instance
         {
             get

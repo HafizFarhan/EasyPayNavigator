@@ -4,32 +4,31 @@ using Installment.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.Design;
-using System.Numerics;
 
 namespace Installment.Pages
 {
-    public class InvoiceModel : PageModel
+    public class ExportInvoiceModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
-        public InvoiceModel(IRepository repository, IUnitOfWork unitOfWork)
+        public ExportInvoiceModel(IRepository repository, IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-        public Company Companies { get; set; }
+        public List<Company> Companies { get; set; }
         public InstallmentPlan plans { get; set; }
         public InstallmentPlan installmentPlans { get; set; }
         public List<InstallmentPayment> InstallmentPayments { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int companyId,int Id)
+        public async Task<IActionResult> OnGetAsync(int companyId, int Id)
         {
-             Companies = _unitOfWork.Repository
-                .GetQueryable<Company>()
-                .FirstOrDefault(company => company.Id == companyId);
+            Companies = await _unitOfWork.Repository
+               .GetQueryable<Company>()
+               .Where(company => company.Id == companyId)
+               .ToListAsync();
             // Get installment plans for the specified companyId
-             plans = await _unitOfWork.Repository
-                .GetQueryable<InstallmentPlan>()
-                .FirstOrDefaultAsync(plan => plan.CompanyId == companyId && plan.Id == Id);
+            plans = await _unitOfWork.Repository
+               .GetQueryable<InstallmentPlan>()
+               .FirstOrDefaultAsync(plan => plan.CompanyId == companyId && plan.Id == Id);
 
             // Get installment payments for the same companyId
             InstallmentPayments = await _unitOfWork.Repository
