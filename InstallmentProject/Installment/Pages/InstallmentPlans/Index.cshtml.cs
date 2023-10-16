@@ -20,7 +20,7 @@ namespace Installment.Pages.InstallmentPlans
             try
             {
                 //plans = await _unitOfWork.Repository.GetQueryable<InstallmentPlan>().Where(m => m.CompanyId == 1).ToListAsync();
-                plans = await _unitOfWork.Repository.GetQueryable<InstallmentPlan>().Where(m => m.CompanyId == 3).
+                plans = await _unitOfWork.Repository.GetQueryable<InstallmentPlan>().Where(m => m.Id >0).
                     GroupJoin(_unitOfWork.Repository.GetQueryable<InstallmentPayment>(),
                     plan => plan.Id,
                     payment => payment.InstallmentPlanId,

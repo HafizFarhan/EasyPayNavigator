@@ -1,2 +1,6 @@
 # Ignore DLL files
 *.dll 
+/InstallmentProject/DAL/EasyRepository.EFCore.Abstractions/bin/Debug/net7.0/EasyRepository.EFCore.Abstractions.pdb
+/InstallmentProject/DAL/EasyRepository.EFCore.Abstractions/bin/Debug/net7.0/EasyRepository.EFCore.Abstractions.dll
+/InstallmentProject/DAL/EasyRepository.EFCore.Abstractions/bin/Debug/net7.0/EasyRepository.EFCore.Abstractions.deps.json
+/InstallmentProject/DAL/EasyRepository.EFCore.Abstractions/bin/Debug/EasyRepository.EFCore.Abstractions.3.0.0.nupkg

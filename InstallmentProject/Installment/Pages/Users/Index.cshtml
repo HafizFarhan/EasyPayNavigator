@@ -1,0 +1,71 @@
+﻿@page
+@model Installment.Pages.Users.IndexModel
+@{
+}
+
+<h1>User List</h1>
+<a asp-page="./Add" class="ml-auto" style="display: flex;
+        justify-content:end;
+        align-items: center;">
+    <button type="submit" class="icon-button">
+        <i data-feather="plus-circle"></i>
+        Add User
+    </button>
+</a>
+<style>
+    .icon-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        font-size: 16px; /* Adjust the font size to control the size of the icon */
+        color: var(--bs-primary); /* Adjust the color as needed */
+    }
+
+        .icon-button:focus {
+            outline: none;
+        }
+</style>
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.users)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>@user.Email</td>
+                <td>@user.Company?.CompanyName</td>
+                <td>@user.Role</td>
+                <td>@user.Password</td>
+                <td>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@user.Id">
+                                <button type="submit" class="icon-button">
+                                    <i data-feather="trash-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <a asp-page="./Edit" asp-page-handler="Update" asp-route-id="@user.Id">
+                                <button type="submit" class="icon-button">
+                                    <i data-feather="edit-2"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

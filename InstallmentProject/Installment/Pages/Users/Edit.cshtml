@@ -1,0 +1,42 @@
+﻿@page
+@model Installment.Pages.Users.EditModel
+@{
+    var roles = Enum.GetValues(typeof(Installment.Entities.UserRole)).Cast<Installment.Entities.UserRole>();     
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="Username">User Name</label>
+        <input type="text" class="form-control" id="Username" name="Username" asp-for="user.Username">
+    </div>
+    <div class="form-group">
+        <label for="Email">User Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" asp-for="user.Email">
+    </div>
+    <div class="form-group">
+        <label for="Password">User Password</label>
+        <input type="text" class="form-control" id="Password" name="Password" asp-for="user.Password">
+    </div>
+    <div class="form-group">
+        <label for="Role">User Role</label>
+        <select class="form-control" id="Role" name="Role" asp-for="user.Role">
+            @foreach (var role in roles)
+            {
+                <option value="@role">@role</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="CompanyId">Company</label>
+        <select class="form-control" id="CompanyId" name="CompanyId" asp-for="user.CompanyId">
+            <option value="">Select a company</option>
+            @foreach (var company in @Model.CompanyList)
+            {
+                <option value="@company.Id">@company.CompanyName</option>
+            }
+        </select>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

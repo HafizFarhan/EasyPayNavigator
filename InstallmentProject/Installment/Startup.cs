@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.AspNetCore.Authentication;
 namespace Installment
 {
     public class Startup
@@ -14,7 +14,16 @@ namespace Installment
                 {
                     options.Conventions.AddPageRoute("/Login", "");
                 });
-            // Add your services and DbContext configurations here
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Set the session timeout
+            });
+            services.AddAuthentication("custom")
+             .AddCookie("custom", options =>
+             {
+                 options.LoginPath = "/"; // Set the login path
+                                               // Other cookie authentication options
+             });
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -27,18 +36,21 @@ namespace Installment
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages(); 
+               
+                endpoints.MapRazorPages();
                 endpoints.MapFallbackToPage("/Login");
+
             });
 
             // Define a default route for the login page

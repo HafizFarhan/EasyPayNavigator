@@ -1,4 +1,7 @@
-﻿<nav class="sidebar">
+﻿@using Installment.Entities
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+
+<nav class="sidebar">
     <div class="sidebar-header">
 
         <a href="#" class="sidebar-brand" style="font-size:12px;font-weight:normal">
@@ -24,57 +27,80 @@
     </div>
     <div class="sidebar-body">
         <ul class="nav">
-            @*<li class="nav-item nav-category">Main</li>*@
-            <li class="nav-item main-item" id="dashboardNav">
-                <a href="/Index" class="nav-link " onclick="handleDashboardClick()">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title fw-normal">Dashboard</span>
-                </a>
-            </li>
-            
-            
+            @*@functions {
+                public string GetUserRoleAsString(UserRole userRole)
+                {
+                    switch (userRole)
+                    {
+                        case UserRole.Admin:
+                            return "Admin";
+                        case UserRole.User:
+                            return "User";
+                        case UserRole.CompanyAdmin:
+                            return "CompanyAdmin";
+                        default:
+                            return "Unknown"; // Handle other cases if needed
+                    }
+                }
+            }*@
+                @*var userRole = (UserRole)TempData["UserRole"];*@
+                <li class="nav-item main-item" id="dashboardNav">
+                    <a href="/AdminPanel" class="nav-link " onclick="handleDashboardClick()">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title fw-normal">Dashboard</span>
+                    </a>
+                </li>
 
-            <li class="nav-item main-item" id="productsNav">
-                <a class="nav-link" >
+           @* <li class="nav-item main-item" id="productsNav">
+                <a class="nav-link">
                     <i class="link-icon" data-feather="package"></i>
-                    <span class="link-title fw-normal" onclick="navigateMe('/Products/Index')">Products</span>
-                    
-                </a>
-                
-
-
-            </li>
-            <li class="nav-item main-item" id="productsNav">
-                <a class="nav-link" >
-                    <i class="link-icon" data-feather="package"></i>
-                    <span class="link-title fw-normal" onclick="navigateMe('/Clients/Index')">Clients</span>
-                    
-                </a>
-               
-
-
-            </li>
-            <li class="nav-item main-item" id="productsNav">
-                <a class="nav-link" >
-                    <i class="link-icon" data-feather="package"></i>
-                    <span class="link-title fw-normal" onclick="navigateMe('/InstallmentPlans/Index')">Plans</span>
-                    
+                    <span class="link-title fw-normal" onclick="navigateMe('/Companies/Index')">Companies</span>
                 </a>
             </li>
             <li class="nav-item main-item" id="productsNav">
                 <a class="nav-link">
                     <i class="link-icon" data-feather="package"></i>
-                    <span class="link-title fw-normal" onclick="navigateMe('/Companies/Index')">Companies</span>
-
+                    <span class="link-title fw-normal" onclick="navigateMe('/Users/Index')">Users</span>
                 </a>
-            </li>
+            </li>*@
+                <li class="nav-item main-item" id="productsNav">
+                    <a class="nav-link" >
+                        <i class="link-icon" data-feather="package"></i>
+                        <span class="link-title fw-normal" onclick="navigateMe('/Products/Index')">Products</span>
+                    
+                    </a>
+                
 
-            <li class="nav-item main-item" id="settingsNav">
-                <a class="nav-link" data-bs-toggle="collapse" href="/Chat" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="mail"></i>
-                    <span class="link-title fw-normal">Settings</span>
-                </a>
-            </li>
+
+                </li>
+                <li class="nav-item main-item" id="productsNav">
+                    <a class="nav-link" >
+                        <i class="link-icon" data-feather="package"></i>
+                        <span class="link-title fw-normal" onclick="navigateMe('/Clients/Index')">Clients</span>
+                    
+                    </a>
+               
+
+
+                </li>
+                <li class="nav-item main-item" id="productsNav">
+                    <a class="nav-link" >
+                        <i class="link-icon" data-feather="package"></i>
+                        <span class="link-title fw-normal" onclick="navigateMe('/InstallmentPlans/Index')">Plans</span>
+                    
+                    </a>
+                </li>
+                <li class="nav-item main-item" id="settingsNav">
+                    <a class="nav-link" data-bs-toggle="collapse" href="/Chat" role="button" aria-expanded="false" aria-controls="emails">
+                        <i class="link-icon" data-feather="mail"></i>
+                        <span class="link-title fw-normal">Settings</span>
+                    </a>
+                </li>
+             
+           
+            
+            
         </ul>
+              
     </div>
 </nav>

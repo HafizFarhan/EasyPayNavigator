@@ -103,24 +103,14 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="wd-30 ht-30 rounded-circle" src="~/img/avatar.png" alt="profile">
+                    <img class="wd-30 ht-30 rounded-circle" src="~/assets/images/avatar.png" alt="profile">
                 </a>
                 <div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
                     <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
                         <div class="mb-3">
-                            <img class="wd-80 ht-80 rounded-circle" src="~/img/avatar.png" alt="profile">
+                            <img class="wd-80 ht-80 rounded-circle" src="~/assets/images/avatar.png" alt="profile">
                         </div>
-                        @*<div class="text-center">
-                            @{
-                                //var tenantEmailClaim = User.FindFirst(CoreClasses.Enums.ClaimType.Email.ToString());
-                                //var tenantNameClaim = User.FindFirst(CoreClasses.Enums.ClaimType.FullName.ToString());
-
-                                var tenantEmail = tenantEmailClaim != null ? tenantEmailClaim.Value : "Email not found";
-                                var tenantName = tenantNameClaim != null && tenantNameClaim.Value != null && tenantNameClaim.Value.Trim().Length > 0 ? tenantNameClaim.Value : "Name not found";
-                            }
-                            <p class="tx-16 fw-bolder">@tenantName</p>
-                            <p class="tx-12 text-muted">@tenantEmail</p>
-                        </div>*@
+                        
 
                     </div>
                     <div class="p-1">
@@ -129,12 +119,9 @@
                             <i class="me-2 icon-md" data-feather="edit"></i>
                             <span class="fw-normal">Profile</span>
                         </a>
-                        <a href="javascript:;" class="text-body ms-0 dropdown-item py-2" style="display:block;">
-                            <i class="me-2 icon-md" data-feather="repeat"></i>
-                            <span class="fw-normal">Switch User</span>
-                        </a>
+                        
 
-                        <a href="/Login" class="text-body ms-0 dropdown-item py-2" style="display:block;">
+                        <a href="/" class="text-body ms-0 dropdown-item py-2" style="display:block;">
                             <i class="me-2 icon-md" data-feather="log-out"></i>
                             <span class="fw-normal">Log Out</span>
                         </a>

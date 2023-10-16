@@ -19,7 +19,7 @@ namespace Installment.Pages
         public InstallmentPlan installmentPlans { get; set; }
         public List<InstallmentPayment> InstallmentPayments { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int companyId, int Id)
+        public async Task<IActionResult> OnGetAsync(int companyId, int planId)
         {
             Companies = await _unitOfWork.Repository
                .GetQueryable<Company>()
@@ -28,17 +28,17 @@ namespace Installment.Pages
             // Get installment plans for the specified companyId
             plans = await _unitOfWork.Repository
                .GetQueryable<InstallmentPlan>()
-               .FirstOrDefaultAsync(plan => plan.CompanyId == companyId && plan.Id == Id);
+               .FirstOrDefaultAsync(plan => plan.CompanyId == companyId && plan.Id == planId);
 
             // Get installment payments for the same companyId
             InstallmentPayments = await _unitOfWork.Repository
                 .GetQueryable<InstallmentPayment>()
-                .Where(payment => payment.InstallmentPlanId == Id)
+                .Where(payment => payment.InstallmentPlanId == planId)
                 .ToListAsync();
             // Calculate the total installments and total amount paid
             installmentPlans = await _unitOfWork.Repository
         .GetQueryable<InstallmentPlan>()
-        .Where(plan => plan.CompanyId == companyId && plan.Id == Id)
+        .Where(plan => plan.CompanyId == companyId && plan.Id == planId)
         .GroupJoin(
             _unitOfWork.Repository.GetQueryable<InstallmentPayment>(),
             plan => plan.Id,

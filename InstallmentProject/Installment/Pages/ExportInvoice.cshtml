@@ -1,4 +1,4 @@
-﻿@page "{Id:int}/{CompanyId:int}"
+﻿@page "{Id:int}/{companyId:int}"
 @model Installment.Pages.InvoiceModel
 @{
     Layout = null;
@@ -13,7 +13,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-12 text-center">
-            <img src="data:image/png;base64,@Convert.ToBase64String(@Model.Companies.LogoImage)" alt="Company Logo" class="img-fluid" />
+            <img src="data:image/png;base64,@Convert.ToBase64String(@Model.Companies.LogoImage)" alt="Company Logo" class="img-fluid"style="height:50px; width:auto;" />
         </div>
     </div>
 
