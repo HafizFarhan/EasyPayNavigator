@@ -19,6 +19,6 @@ We welcome contributions from the community! If you have ideas for improvement o
 EasyPayNavigator is licensed under the [MIT License](LICENSE.md). Feel free to use, modify, and distribute it according to your needs.
 
 ## Support
-For any questions or issues, reach out to our dedicated support team at support@easypaynavigator.com.
+For any questions or issues, reach out to our dedicated support team at hafizfarhan0039@gmail.com.
 
 Transform your installment and payment processes with EasyPayNavigator – where innovation meets convenience!
