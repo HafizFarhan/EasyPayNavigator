@@ -17,28 +17,14 @@
 </a>
     
 
-<style>
-    .icon-button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        margin: 0;
-        font-size: 16px; /* Adjust the font size to control the size of the icon */
-        color: var(--bs-primary); /* Adjust the color as needed */
-    }
 
-        .icon-button:focus {
-            outline: none;
-        }
-</style>
 <table class="table">
     <thead>
         <tr>
             <th>Product Name</th>
             <th>Price</th>
             <th>Description</th>
-            <th>CompanyId</th>
+            
             <th>Actions</th>
         </tr>
     </thead>
@@ -49,20 +35,20 @@
                 <td>@product.Name</td>
                 <td>@product.Price</td>
                 <td>@product.Description</td>
-                <td>@product.CompanyId</td>
+                
                 <td>
                     <div class="row">
                         <div class="col-md-6">
-                            <form method="post" asp-page-handler="Delete" asp-route-id="@product.Id">
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@product.Id" data-toggle="tooltip" data-placement="bottom" title="Delete">
                                 <button type="submit" class="icon-button">
                                     <i data-feather="trash-2"></i>
                                 </button>
                             </form>
                         </div>
-                        <div class="col-md-6">
-                            <a asp-page="./Edit" asp-page-handler="Update" asp-route-id="@product.Id" >
+                        <div class="col-md-6" style="padding-left:0px !important;">
+                            <a asp-page="./Edit" asp-page-handler="Update" asp-route-id="@product.Id" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                 <button type="submit" class="icon-button">
-                                    <i data-feather="edit-2"></i>
+                                    <i data-feather="edit-2" ></i>
                                 </button>
                             </a>
                         </div>

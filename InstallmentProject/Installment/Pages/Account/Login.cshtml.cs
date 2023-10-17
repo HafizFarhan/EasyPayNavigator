@@ -1,5 +1,6 @@
 using EasyRepository.EFCore.Generic;
 using Installment.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,8 @@ namespace Installment.Pages
         private readonly IHttpContextAccessor _httpContextAccessor; // Inject the IHttpContextAccessor
         [BindProperty]
 		public User user { get; set; }
-       
+        public string userRole { get; set; }
+
         public LoginModel(IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
 		{
 			_unitOfWork = unitOfWork;
@@ -52,18 +54,15 @@ namespace Installment.Pages
 						new Claim(ClaimTypes.Name, dbUser.Username),
 						new Claim(ClaimTypes.Email, dbUser.Email),
                         new Claim(ClaimTypes.Role, dbUser.Role.ToString())
-						// Add more claims if needed
+						
 					}, "custom");
 
 				   var principal = new ClaimsPrincipal(identity);
 
-					// Sign in the user
-				   //await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
-				 // You can also store the user's role in TempData for later use
-				  TempData["UserRole"] = dbUser.Role;
-
-                if (TempData["UserRole"].ToString() == "Admin")
+                // Store the user's role in the session
+                userRole = dbUser.Role.ToString();
+                HttpContext.Session.SetString("UserRole", userRole);
+                if (HttpContext.Session.GetString("UserRole") == "Admin")
                 {
                     // Redirect to the admin panel if the user is an admin
                     return RedirectToPage("/AdminPanel");

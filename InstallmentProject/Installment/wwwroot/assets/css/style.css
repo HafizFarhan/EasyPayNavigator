@@ -80,6 +80,39 @@
     --bs-border-radius-pill: 50rem;
    
 }
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Added to center-align both logo and text */
+}
+
+.lead {
+    font-size: 18px;
+    color: #333;
+    /*text-align: center;*/ /* Horizontally center-align the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Vertically center-align the text within the container */
+    line-height: 1.6;
+    margin: 0; /* Remove default margins for cleaner look */
+    padding: 20px; /* Add padding for better spacing */
+}
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    font-size: 16px; /* Adjust the font size to control the size of the icon */
+    color: var(--bs-primary); /* Adjust the color as needed */
+}
+
+    .icon-button:focus {
+        outline: none;
+    }
 .invoice-container {
     width: 800px;
     margin: 0 auto;

@@ -11,6 +11,10 @@
 
 //}
 
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
 document.addEventListener("DOMContentLoaded", function () {
     feather.replace(); // Initialize Feather Icons
 

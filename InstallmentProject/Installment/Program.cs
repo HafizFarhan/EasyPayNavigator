@@ -17,7 +17,10 @@ namespace Installment
             builder.Services.AddHttpContextAccessor();
             // Register IRepository and IUnitOfWork
             //builder.Services.AddScoped<IRepository, Repository>();
-          
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Set the session timeout
+            });
             // Add services to the container.
             builder.Services.AddRazorPages();
             // Add Entity Framework Core with your connection string
@@ -39,7 +42,7 @@ namespace Installment
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
