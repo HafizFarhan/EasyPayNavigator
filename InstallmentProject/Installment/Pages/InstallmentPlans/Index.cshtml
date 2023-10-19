@@ -17,7 +17,9 @@
             <th>Product</th>
             <th>Client</th>
             <th>Price</th>
+            <th>Sale Price</th>
             <th>Advance</th>
+            
             <th>Installments</th>
             <th>Paid</th>
             <th>Remaining</th>
@@ -32,6 +34,7 @@
                 <td>@plan.ProductName</td>
                 <td>@plan.ClientName</td>
                 <td>@plan.TotalPrice</td>
+                <td>@plan.SalePrice</td>
                 <td>@plan.AdvancePayment</td>
                 <td>@plan.NoInstallments</td>
                 <td>@plan.TotalPaid</td>
@@ -40,30 +43,31 @@
                 <td>
                     <div class="row">
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <form method="post" asp-page-handler="Delete" asp-route-id="@plan.Id" data-toggle="tooltip" data-placement="bottom" title="Delete" >
                                 <button type="submit" class="icon-button">
                                     <i data-feather="trash-2"></i>
                                 </button>
                             </form>
                         </div>
-                        <div class="col-md-3" style="padding-left:0px !important;">
+                        <div class="col-md-2" >
                             <a asp-page="./Edit" asp-page-handler="Update" asp-route-id="@plan.Id" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                 <button type="submit" class="icon-button">
                                     <i data-feather="edit-2"></i>
                                 </button>
                             </a> 
                         </div>
-                        <div class="col-md-3" style="padding-left:0px !important;">
+                        <div class="col-md-3" >
                             <a asp-page="/InstallmentPayments/Index" asp-route-InstallmentPlanId="@plan.Id" data-toggle="tooltip" data-placement="bottom" title="View Payment">
                                 <i data-feather="credit-card" class="icon-button"></i>
                             </a>
                         </div>
                         <div class="col-md-3" style="padding-left:0px !important;">
                             <a asp-page="/Invoice" asp-route-Id="@plan.Id" asp-route-CompanyId="@plan.CompanyId" data-toggle="tooltip" data-placement="bottom" title="View Invoice">
-                                <i data-feather="file-text" class="icon-button " title="View Invoice"></i>
+                                <i data-feather="file-text" class="icon-button " ></i>
                             </a>
                         </div>
+                        
                     </div>
                     
                 </td>

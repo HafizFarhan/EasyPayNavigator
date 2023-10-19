@@ -15,6 +15,7 @@ namespace Installment.Pages.InstallmentPlans
         
         public List<SelectListItem> ProductItems { set; get; }
         public List<SelectListItem> ClientItems { set; get; }
+        public List<SelectListItem> CompanyItems { set; get; }
 
         public AddModel(IUnitOfWork unitOfWork)
         {
@@ -25,6 +26,8 @@ namespace Installment.Pages.InstallmentPlans
 
             ProductItems = _unitOfWork.Repository.GetQueryable<Product>().Select(p => new SelectListItem { Value = p.Name, Text = p.Name }).ToList();
             ClientItems = _unitOfWork.Repository.GetQueryable<Client>().Select(c => new SelectListItem { Value = c.Name, Text = c.Name }).ToList();
+            CompanyItems = _unitOfWork.Repository.GetQueryable<Company>().Select(a => new SelectListItem { Value = a.CompanyName, Text = a.CompanyName }).ToList();
+
             return Page();
         }
         public async Task<IActionResult> OnPostAsync()
@@ -46,11 +49,13 @@ namespace Installment.Pages.InstallmentPlans
             {
                 var selectedProduct = _unitOfWork.Repository.GetQueryable<Product>().FirstOrDefault(m => m.Name == plan.ProductName);
                 var selectedClient = _unitOfWork.Repository.GetQueryable<Client>().FirstOrDefault(m => m.Name == plan.ClientName);
+                var selectedCompany= _unitOfWork.Repository.GetQueryable<Company>().FirstOrDefault(m => m.CompanyName == plan.CompanyName);
+
                 if (selectedProduct != null && selectedClient != null)
                 {
                     plan.ProductId = selectedProduct.Id; 
                     plan.ClientId = selectedClient.Id;
-                    plan.CompanyId = Global.Instance.GetCompanyId();    
+                    plan.CompanyId = selectedCompany.Id;    
                 }
                 else
                 {

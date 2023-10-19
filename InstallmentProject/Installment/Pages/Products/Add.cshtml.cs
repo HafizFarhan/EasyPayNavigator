@@ -2,13 +2,15 @@ using EasyRepository.EFCore.Generic;
 using Installment.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Numerics;
 
 namespace Installment.Pages.Products
 {
     public class AddModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
-
+        public List<SelectListItem> CompanyItems { set; get; }
         [BindProperty]
         public Product product { get; set; }
 
@@ -21,6 +23,7 @@ namespace Installment.Pages.Products
         {
             // Initialize the NewProduct object or perform any other setup as needed.
             product = new Product();
+            CompanyItems = _unitOfWork.Repository.GetQueryable<Company>().Select(a => new SelectListItem { Value = a.CompanyName, Text = a.CompanyName }).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -33,7 +36,9 @@ namespace Installment.Pages.Products
 
             try
             {
-                product.CompanyId = Global.Instance.GetCompanyId();
+                var selectedCompany = _unitOfWork.Repository.GetQueryable<Company>().FirstOrDefault(m => m.CompanyName == product.CompanyName);
+
+                product.CompanyId = selectedCompany.Id;
 
                 // Add the new product to the repository
                 _unitOfWork.Repository.Add(product);

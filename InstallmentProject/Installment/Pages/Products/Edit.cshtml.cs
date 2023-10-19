@@ -3,14 +3,16 @@ using EasyRepository.EFCore.Generic;
 using Installment.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Numerics;
 
 namespace Installment.Pages.Products
 {
     public class EditModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
-        
+        public List<SelectListItem> CompanyItems { set; get; }
         public EditModel(IRepository repository, IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -28,8 +30,9 @@ namespace Installment.Pages.Products
                     // Handle the case where the product doesn't exist
                     return RedirectToPage("/Error");
                 }
+            CompanyItems = _unitOfWork.Repository.GetQueryable<Company>().Select(a => new SelectListItem { Value = a.CompanyName, Text = a.CompanyName }).ToList();
 
-                return Page();
+            return Page();
             }
         
         public async Task<IActionResult> OnPostUpdateAsync(int id)
@@ -51,10 +54,14 @@ namespace Installment.Pages.Products
                     // Handle the case where the product doesn't exist
                     return RedirectToPage("/Error");
                 }
+                var selectedCompany = _unitOfWork.Repository.GetQueryable<Company>().FirstOrDefault(m => m.CompanyName == product.CompanyName);
 
                 // Apply changes to the existing product
                 existingProduct.Name = product.Name;
-                existingProduct.Price = product.Price;
+                existingProduct.OriginalPrice = product.OriginalPrice;
+                existingProduct.CompanyId = selectedCompany.Id;
+                existingProduct.CompanyName = selectedCompany.CompanyName;
+                existingProduct.Qty = product.Qty;
                 existingProduct.Description = product.Description;
 
                 // Save changes to the database

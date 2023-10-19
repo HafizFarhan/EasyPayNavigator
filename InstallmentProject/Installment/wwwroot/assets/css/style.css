@@ -80,6 +80,24 @@
     --bs-border-radius-pill: 50rem;
    
 }
+.forgot-password {
+    font-size: 14px;
+    color: #f79131;
+    margin-top: 10px;
+    text-align: right;
+}
+.forgot-password {
+    font-size: 14px;
+    color: #f79131;
+    margin-top: 10px;
+    text-align: right;
+}
+.create-account {
+    font-size: 14px;
+    color: #f79131;
+    margin-top: 10px;
+    text-align: center;
+}
 .centered-container {
     display: flex;
     justify-content: center;

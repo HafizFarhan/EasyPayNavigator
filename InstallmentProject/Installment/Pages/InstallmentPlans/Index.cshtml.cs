@@ -31,13 +31,14 @@ namespace Installment.Pages.InstallmentPlans
                         ProductName = plan.ProductName,
                         ClientName = plan.ClientName,
                         TotalPrice = plan.TotalPrice,
+                        SalePrice = plan.SalePrice,
                         AdvancePayment = plan.AdvancePayment,
                         CompanyId = plan.CompanyId,
 
                         // Calculate the total installments and total amount paid
                         NoInstallments = payments.Count(),
                         TotalPaid = payments.Sum(payment => payment.RecentAmount) + plan.AdvancePayment,
-                        RemainingAmount = plan.TotalPrice - (payments.Sum(payment => payment.RecentAmount) + plan.AdvancePayment)
+                        RemainingAmount = plan.SalePrice - (payments.Sum(payment => payment.RecentAmount) + plan.AdvancePayment)
 
                     }).ToListAsync();
 

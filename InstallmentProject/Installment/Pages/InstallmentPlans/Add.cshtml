@@ -16,9 +16,19 @@
             <option value=“”>Select a Client </option>
         </select>
     </div>
+    <div class=“form-group”>
+        <label asp-for="plan.CompanyName">Select a Company</label>
+        <select class="form-control" asp-for="plan.CompanyName" asp-items="@Model.CompanyItems">
+            <option value=“”>Select a Company </option>
+        </select>
+    </div>
     <div class="form-group">
         <label asp-for="plan.TotalPrice">Total Price</label>
         <input type="text" class="form-control" id="TotalPrice" name="plan.TotalPrice">
+    </div>
+    <div class="form-group">
+        <label asp-for="plan.SalePrice">Sale Price</label>
+        <input type="text" class="form-control" id="SalePrice" name="plan.SalePrice">
     </div>
     <div class="form-group">
         <label asp-for="plan.AdvancePayment">Advance Payment</label>
