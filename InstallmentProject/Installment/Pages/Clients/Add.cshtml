@@ -15,7 +15,12 @@
         <label for="Price">Client PhoneNo</label>
         <input type="number" class="form-control" id="Phone" name="Phone">
     </div>
-
+    <div class=“form-group”>
+        <label asp-for="client.CompanyName">Select a Company</label>
+        <select class="form-control" asp-for="client.CompanyName" asp-items="@Model.CompanyItems">
+            <option value=“”>Select a Company </option>
+        </select>
+    </div>
     <br />
     <button type="submit" class="btn btn-primary">Add Client</button>
 </form>

@@ -9,9 +9,11 @@ namespace Installment.Entities
         public int ProductId { get; set; }
         public int ClientId { get; set; }
         public decimal TotalPrice { get; set; }
+        public decimal SalePrice { get; set; }
         public decimal AdvancePayment { get; set; }
         public string ProductName { get; set; }
         public string ClientName { get; set; }
+        public string CompanyName { get; set; }
         public int CompanyId { get; set; }
         [NotMapped]
         public decimal TotalPaid { get; set; }

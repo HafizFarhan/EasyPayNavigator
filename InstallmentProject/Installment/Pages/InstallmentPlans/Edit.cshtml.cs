@@ -3,13 +3,17 @@ using EasyRepository.EFCore.Generic;
 using Installment.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Installment.Pages.InstallmentPlans
 {
     public class EditModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
-
+        public List<SelectListItem> ProductList { set; get; }
+        public List<SelectListItem> ClientItems { set; get; }
+        public List<SelectListItem> CompanyItems { set; get; }
         public EditModel(IRepository repository, IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -26,6 +30,9 @@ namespace Installment.Pages.InstallmentPlans
                 // Handle the case where the product doesn't exist
                 return RedirectToPage("/Error");
             }
+            ProductList = _unitOfWork.Repository.GetQueryable<Product>().Select(p => new SelectListItem { Value = p.Name, Text = p.Name }).ToList();
+            ClientItems = _unitOfWork.Repository.GetQueryable<Client>().Select(c => new SelectListItem { Value = c.Name, Text = c.Name }).ToList();
+            CompanyItems = _unitOfWork.Repository.GetQueryable<Company>().Select(a => new SelectListItem { Value = a.CompanyName, Text = a.CompanyName }).ToList();
 
             return Page();
         }
@@ -48,13 +55,20 @@ namespace Installment.Pages.InstallmentPlans
                     // Handle the case where the product doesn't exist
                     return RedirectToPage("/Error");
                 }
+                var selectedProduct = _unitOfWork.Repository.GetQueryable<Product>().FirstOrDefault(m => m.Name == plan.ProductName);
+                var selectedClient = _unitOfWork.Repository.GetQueryable<Client>().FirstOrDefault(m => m.Name == plan.ClientName);
+                var selectedCompany = _unitOfWork.Repository.GetQueryable<Company>().FirstOrDefault(m => m.CompanyName == plan.CompanyName);
 
                 // Apply changes to the existing product
-                existingPlan.ProductName = plan.ProductName;
-                existingPlan.ClientName = plan.ClientName;
+                
+                existingPlan.ProductName = selectedProduct.Name;
+                existingPlan.ClientName = selectedClient.Name;
                 existingPlan.TotalPrice = plan.TotalPrice;
+                existingPlan.SalePrice = plan.SalePrice;
                 existingPlan.AdvancePayment = plan.AdvancePayment;
-                existingPlan.CompanyId = plan.CompanyId;
+                existingPlan.CompanyId = selectedCompany.Id;
+                existingPlan.CompanyName = selectedCompany.CompanyName;
+
 
                 // Save changes to the database
                 await _unitOfWork.Repository.CompleteAsync();

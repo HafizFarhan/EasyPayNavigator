@@ -19,7 +19,7 @@ namespace Installment.Pages.Clients
         {
             try
             {
-                Clients = await _unitOfWork.Repository.GetQueryable<Client>().Where(m => m.CompanyId == 1).ToListAsync();
+                Clients = await _unitOfWork.Repository.GetQueryable<Client>().Where(m => m.Id > 0).ToListAsync();
 
                 return Page();
             }

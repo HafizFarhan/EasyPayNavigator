@@ -20,7 +20,7 @@ namespace Installment.Pages.Products
         {
             try
             {
-                 Products = await _unitOfWork.Repository.GetQueryable<Product>().Where(m => m.CompanyId == 1).ToListAsync();
+                 Products = await _unitOfWork.Repository.GetQueryable<Product>().Where(m => m.Id >0).ToListAsync();
                 
                 return Page();
             }

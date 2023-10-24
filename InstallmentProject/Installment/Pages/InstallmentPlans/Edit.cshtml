@@ -4,24 +4,38 @@
 }
 <form method="post">
     <div class="form-group">
-        <label for="ProductName">Product Name</label>
-        <input type="text" class="form-control" id="ProductName" name="ProductName" asp-for="plan.ProductName">
+        <label asp-for="plan.ProductName">Product Name</label>
+        <select class="form-control" asp-for="plan.ProductName" asp-items="@Model.ProductList">
+            <option value=“”>Select a Product </option>
+        </select>
     </div>
     <div class="form-group">
-        <label for="ClientName">Client Name</label>
-        <input type="text" class="form-control" id="ClientName" name="ClientName" asp-for="plan.ClientName">
+        <label asp-for="plan.ClientName">Select a Client</label>
+        <select class="form-control" asp-for="plan.ClientName" asp-items="@Model.ClientItems">
+            <option value=“”>Select a Client </option>
+        </select>
+       
+    </div>
+
+    <div class="form-group">
+        <label asp-for="plan.TotalPrice">Total Price</label>
+        <input type="number" class="form-control" asp-for="@Model.plan.TotalPrice"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="plan.SalePrice">Sale Price</label>
+        <input type="number" class="form-control"  asp-for="plan.SalePrice">
     </div>
     <div class="form-group">
-        <label for="TotalPrice">Total Price</label>
-        <input type="number" class="form-control" id="TotalPrice" name="TotalPrice" asp-for="plan.TotalPrice">
+        <label asp-for="plan.AdvancePayment">Advance Payment</label>
+        <input type="number" class="form-control"  asp-for="plan.AdvancePayment">
     </div>
-    <div class="form-group">
-        <label for="AdvancePayment">Advance Payment</label>
-        <input type="number" class="form-control" id="AdvancePayment" name="AdvancePayment" asp-for="plan.AdvancePayment">
-    </div>
-    <div class="form-group">
-        <label for="CompanyId">Company Id</label>
-        <input type="number" class="form-control" id="CompanyId" name="CompanyId" asp-for="plan.CompanyId">
+
+    <div class=“form-group”>
+        <label asp-for="plan.CompanyName">Select a Company</label>
+        <select class="form-control" asp-for="plan.CompanyName" asp-items="@Model.CompanyItems">
+            <option value=“”>Select a Company </option>
+        </select>
     </div>
 
     <br />

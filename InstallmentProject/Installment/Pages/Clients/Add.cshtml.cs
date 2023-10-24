@@ -2,6 +2,7 @@ using EasyRepository.EFCore.Generic;
 using Installment.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Installment.Pages.Clients
 {
@@ -11,6 +12,7 @@ namespace Installment.Pages.Clients
 
         [BindProperty]
         public Client client { get; set; }
+        public List<SelectListItem> CompanyItems { set; get; }
         public AddModel(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -18,7 +20,9 @@ namespace Installment.Pages.Clients
         public void OnGet()
         {
                 // Initialize the NewProduct object or perform any other setup as needed.
-                client = new Client();    
+                client = new Client();
+            CompanyItems = _unitOfWork.Repository.GetQueryable<Company>().Select(a => new SelectListItem { Value = a.CompanyName, Text = a.CompanyName }).ToList();
+
         }
         public async Task<IActionResult> OnPostAsync()
         {
@@ -30,7 +34,9 @@ namespace Installment.Pages.Clients
 
             try
             {
-                client.CompanyId = Global.Instance.GetCompanyId();
+                var selectedCompany = _unitOfWork.Repository.GetQueryable<Company>().FirstOrDefault(m => m.CompanyName == client.CompanyName);
+
+                client.CompanyId = selectedCompany.Id;
 
                 // Add the new product to the repository
                 _unitOfWork.Repository.Add(client);

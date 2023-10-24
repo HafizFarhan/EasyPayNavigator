@@ -7,6 +7,16 @@
 @{
     Layout = null;
 }
+<head>
+    <link rel="stylesheet" href="~assets/css/styles.css" />
+
+    <!-- Add a link to your favicon.ico -->
+    <link rel="icon" type="image/x-icon" href="~/assets/images/logo.png">
+    <title>
+        @ViewData["Title"]
+    </title>
+
+</head>
 
 <style>
     body {
@@ -86,21 +96,18 @@
         margin-top: 10px;
         text-align: right;
     }
-
-    .create-account {
-        font-size: 14px;
-        color: #f79131;
-        margin-top: 10px;
-        text-align: center;
+    .logo-image
+    {
+        width:25%;
     }
+    
 
     
 </style>
-<head>
-<link rel="stylesheet" href="~/css/styles.css" />
-</head>
+
 <div class="login-container">
-    <img src="~/assets/images/logo.png" style="width:25%; height:15%;"/>
+    
+    <img src="~/assets/images/logo.png" class="logo-image"/>
     <h1>Installment Planner</h1>
 
     <form class="forms-sample" id="account" method="post">
