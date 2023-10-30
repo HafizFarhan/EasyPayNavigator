@@ -1,0 +1,66 @@
+﻿@page
+@model Installment.Pages.Report.ClientSalesModel
+@{
+}
+<div class="row">
+
+    <div class="card">
+        <a class="card-link">
+            <div class="card-header"><b>Client Sales</b></div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Client</th>
+                            <th>Payable</th>
+                            <th>Advance</th>
+                            <th>Qty</th>
+                            <th>Inst.</th>
+                            <th>Paid</th>
+                            <th>Remaining</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var plan in Model.plans)
+                        {
+                            <tr>
+                                <td>@plan.ProductName</td>
+                                <td>@plan.ClientName</td>
+                                <td>@plan.SalePrice</td>
+                                <td>@plan.AdvancePayment</td>
+                                <td>@plan.ProductQty</td>
+                                <td>@plan.NoInstallments</td>
+                                <td>@plan.TotalPaid</td>
+                                <td>@plan.RemainingAmount</td>
+                                <td>@plan.Status</td>
+                                <td>
+                                    <div class="row">
+                                        <a asp-page="/InstallmentPayments/Index" asp-route-InstallmentPlanId="@plan.Id" data-toggle="tooltip" data-placement="bottom" title="View Payment">
+                                            <i data-feather="credit-card" class="icon-button"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+                        <!-- Calculate and display totals -->
+                        <tr>
+                            <td><b>Total:</b></td>
+                            <td></td>
+                            <td><b>@Model.plans.Sum(p => p.SalePrice)</b></td>
+                            <td><b>@Model.plans.Sum(p => p.AdvancePayment)</b></td>
+                            <td><b>@Model.plans.Sum(p => p.ProductQty)</b></td>
+                            <td></td>
+                            <td><b>@Model.plans.Sum(p => p.TotalPaid)</b></td>
+                            <td><b>@Model.plans.Sum(p => p.RemainingAmount)</b></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </a>
+    </div>
+</div>

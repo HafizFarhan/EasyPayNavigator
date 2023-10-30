@@ -77,8 +77,26 @@
     --bs-border-radius-lg: 0.5rem;
     --bs-border-radius-xl: 1rem;
     --bs-border-radius-2xl: 2rem;
-    --bs-border-radius-pill: 50rem;
-   
+    --bs-border-radius-pill: 50rem;  
+}
+.custom-small-button {
+    padding: 6px 12px !important; /* Adjust the padding as needed */
+    font-size: 120% !important; /* Adjust the font size as needed */
+}
+.no-data-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    color: #777;
+    font-size: 18px;
+}
+    .icon-left-padding
+{
+    padding-left:0px !important;
 }
 .forgot-password {
     font-size: 14px;
@@ -170,6 +188,7 @@
 .export-button {
     float: right;
     margin-top: 10px;
+    margin-right:8.5%;
 }
 
 .logo-container {

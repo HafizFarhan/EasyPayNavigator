@@ -65,6 +65,11 @@ namespace Installment.Pages.InstallmentPlans
                 existingPlan.ClientName = selectedClient.Name;
                 existingPlan.TotalPrice = plan.TotalPrice;
                 existingPlan.SalePrice = plan.SalePrice;
+                existingPlan.ProductQty = plan.ProductQty;
+                existingPlan.Status = plan.Status;
+                existingPlan.Date = plan.Date;
+                existingPlan.NoOfInstallments = plan.NoOfInstallments;
+                existingPlan.InstallmentAmount = plan.InstallmentAmount;
                 existingPlan.AdvancePayment = plan.AdvancePayment;
                 existingPlan.CompanyId = selectedCompany.Id;
                 existingPlan.CompanyName = selectedCompany.CompanyName;

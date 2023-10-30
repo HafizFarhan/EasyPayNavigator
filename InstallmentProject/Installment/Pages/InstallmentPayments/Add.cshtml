@@ -1,20 +1,20 @@
-﻿@page
+﻿@page 
 @model Installment.Pages.InstallmentPayments.AddModel
 @{
 }
 <form method="post" asp-page-handler="OnPostAsync">
     <input type="hidden" asp-for="InstallmentPlanId" />
     <div class="form-group">
-        <label for="RecentAmount">Amount</label>
-        <input type="text" class="form-control" id="RecentAmount" name="payments.RecentAmount">
+        <label asp-for="payments.RecentAmount">Amount</label>
+        <input type="text" class="form-control"  asp-for="payments.RecentAmount">
     </div>
     <div class="form-group">
-        <label for="Date">Date</label>
-        <input type="date" class="form-control" id="Date" name="payments.Date">
+        <label asp-for="payments.Date">Date</label>
+        <input type="date" class="form-control"  asp-for="payments.Date">
     </div>
     <div class="form-group">
-        <label for="Status">Status</label>
-        <input type="text" class="form-control" id="Status" name="payments.Status">
+        <label asp-for="payments.Status">Status</label>
+        <input type="text" class="form-control"  asp-for="payments.Status">
     </div>
 
     <br />

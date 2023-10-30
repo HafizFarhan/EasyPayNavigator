@@ -4,7 +4,7 @@
 }
 @using Installment.Entities
 @using Microsoft.AspNetCore.Http
-
+<script src="~/js/site.js"></script>
 <nav class="sidebar">
     <div class="sidebar-header">
 
@@ -58,7 +58,7 @@
 
 
 
-                    <li class="nav-item main-item" id="productsNav">
+                    <li class="nav-item main-item" >
                         <a class="nav-link">
                             <i class="link-icon" data-feather="shopping-cart"></i>
                             <span class="link-title fw-normal" onclick="navigateMe('/Products/Index')">Products</span>
@@ -68,7 +68,7 @@
 
 
                     </li>
-                    <li class="nav-item main-item" id="productsNav">
+                    <li class="nav-item main-item" >
                         <a class="nav-link">
                             <i class="link-icon" data-feather="users"></i>
                             <span class="link-title fw-normal" onclick="navigateMe('/Clients/Index')">Clients</span>
@@ -78,21 +78,49 @@
 
 
                     </li>
-                    <li class="nav-item main-item" id="productsNav">
+                    <li class="nav-item main-item" >
                         <a class="nav-link">
                             <i class="link-icon" data-feather="list"></i>
                             <span class="link-title fw-normal" onclick="navigateMe('/InstallmentPlans/Index')">Plans</span>
 
                         </a>
                     </li>
-                    
+                <li class="nav-item main-item" id="productsNav">
+                    <a class="nav-link" onclick="toggleProductsSubMenu();">
+                        <i class="link-icon" data-feather="bar-chart"></i>
+                        <span class="link-title fw-normal" >Reports</span>
+                        <i class="link-arrow" data-feather="chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="products">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="/Report/ProductSales" class="nav-link fw-normal" id="productsListNav">
+                                    ProductSales
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="/Report/ClientSales" class="nav-link fw-normal" id="productsListNav">
+                                    ClientSales
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="/Report/MonthlyReport" class="nav-link fw-normal" id="productsListNav">
+                                    Monthly Report
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                   
+                       
                 }
-
-           
-
-
-
         </ul>
 
     </div>
 </nav>
+
+    

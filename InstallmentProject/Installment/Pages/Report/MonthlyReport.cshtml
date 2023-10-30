@@ -1,0 +1,79 @@
+﻿@page
+@model Installment.Pages.Report.MonthlyReportModel
+@{
+}
+<link rel="stylesheet" href="~/assets/css/style.css" />
+
+<div class="row">
+    <div class="card">
+        <a class="card-link">
+            <div class="card-header"><b>Monthly Sales</b></div>
+            <div class="card-body">
+                <div class="form-group">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col">
+                                <label for="fromDate">From Date</label>
+                                <div class="input-group">
+                                    <input type="date" class="form-control" asp-for="fromDate">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="toDate">To Date</label>
+                                <div class="input-group">
+                                    <input type="date" class="form-control" asp-for="toDate">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <div class="input-group">
+                                    <button type="submit" class="btn btn-primary btn-block custom-small-button">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                @if (Model.MonthlyReportData != null )
+                {
+                    @if (Model.MonthlyReportData.Count > 0)
+                    {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Client Name</th>
+                                <th>No.Of Installments</th>
+                                <th>Installment Amount</th>
+                                <th>Paid Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var client in Model.MonthlyReportData)
+                            {
+                                <tr>
+                                    <td>@client.ProductName</td>
+                                    <td>@client.ClientName</td>
+                                    <td>@client.NoOfInstallments</td>
+                                    <td>@client.InstallmentAmount</td>
+                                    <td>@client.TotalPaid</td>
+                                    <td>@client.Status</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    }
+                    else
+                    {
+
+                        <div class="no-data-message">
+                            <p>No payments found within the selected date range.</p>
+                        </div>
+                    }
+                }
+                
+            </div>
+        </a>
+    </div>
+</div>

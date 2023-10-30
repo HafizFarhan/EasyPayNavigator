@@ -3,6 +3,10 @@
 @{
 }
 <form method="post">
+    <div class="form-group">
+        <label asp-for="plan.Date">Date</label>
+        <input type="datetime" class="form-control" asp-for="plan.Date">
+    </div>
     <div class=“form-group”>
         <label asp-for="plan.ProductName">Select a Product</label>
         <select class="form-control" asp-for="plan.ProductName" asp-items="@Model.ProductItems">
@@ -23,16 +27,33 @@
         </select>
     </div>
     <div class="form-group">
+        <label asp-for="plan.ProductQty">Product Quantity</label>
+        <input type="number" class="form-control" asp-for="plan.ProductQty">
+    </div>
+   
+    <div class="form-group">
+        <label asp-for="plan.NoOfInstallments">No.Of Installments</label>
+        <input type="number" class="form-control" asp-for="plan.NoOfInstallments">
+    </div>
+    <div class="form-group">
+        <label asp-for="plan.InstallmentAmount">Installment Amount</label>
+        <input type="number" class="form-control" asp-for="plan.InstallmentAmount">
+    </div>
+    <div class="form-group">
         <label asp-for="plan.TotalPrice">Total Price</label>
-        <input type="text" class="form-control" id="TotalPrice" name="plan.TotalPrice">
+        <input type="number" class="form-control" id="TotalPrice" name="plan.TotalPrice">
     </div>
     <div class="form-group">
         <label asp-for="plan.SalePrice">Sale Price</label>
-        <input type="text" class="form-control" id="SalePrice" name="plan.SalePrice">
+        <input type="number" class="form-control" id="SalePrice" name="plan.SalePrice">
     </div>
     <div class="form-group">
         <label asp-for="plan.AdvancePayment">Advance Payment</label>
         <input type="text" class="form-control" id="AdvancePayment" name="plan.AdvancePayment">
+    </div>
+    <div class="form-group">
+        <label asp-for="plan.Status">Plan Status</label>
+        <input type="text" class="form-control" asp-for="plan.Status">
     </div>
     <br />
  

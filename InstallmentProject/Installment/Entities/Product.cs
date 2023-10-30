@@ -6,6 +6,7 @@ namespace Installment.Entities
     {
         public string? Name { get; set; }
         public decimal OriginalPrice { get; set; }
+        public decimal SalePrice { get; set; }
         public string CompanyName { get; set; }
         public int Qty { get; set; }
         public string? Description { get; set; }

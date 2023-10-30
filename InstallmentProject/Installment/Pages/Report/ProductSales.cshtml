@@ -1,0 +1,56 @@
+﻿@page
+@model Installment.Pages.Report.ProductSalesModel
+@{
+}
+<div class="row">
+    <div class="card">
+        <a class="card-link">
+            <div class="card-header"><b>Product Sales</b></div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Unit Price</th>
+                            <th>Purchase Price</th>
+                            <th>Quantity</th>
+                            <th>Total Purchase Price</th>
+                            <th>Total Sale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.ProductSalesSummaries)
+                        {
+                            <tr>
+                                <td>@product.ProductName</td>
+                                <td>@product.UnitPrice</td>
+                                <td>@product.PurchasePrice</td>
+                                <td>@product.Quantity</td>
+                                <td>@product.TotalPurchasePrice</td>
+                                <td>@product.TotalSale</td>
+                            </tr>
+                        }
+
+                        <!-- Add the last rows with the total values -->
+                        <tr>
+                            <td><b>Total Sales Price:</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><b>@Model.totalPurchasePrice</b></td>
+                            <td><b>@Model.totalSalePrice</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>Net Profit:</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><b>@Model.netProfit</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </a>
+    </div>
+</div>

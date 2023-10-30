@@ -12,16 +12,16 @@ namespace Installment.Pages.InstallmentPayments
 
         [BindProperty]
         public InstallmentPayment payments { get; set; }
-        [BindProperty(Name = "InstallmentPlanId")]
+        [BindProperty(SupportsGet = true)]
         public int InstallmentPlanId { get; set; }
         public AddModel(IUnitOfWork unitOfWork, ILogger<AddModel> logger)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
         }
-        public IActionResult OnGet(int installmentPlanId)
+        public IActionResult OnGet(int InstallmentPlanId)
         {
-            InstallmentPlanId = installmentPlanId;
+            this.InstallmentPlanId = InstallmentPlanId;
             return Page();
         }
         public async Task<IActionResult> OnPostAsync()
@@ -34,11 +34,7 @@ namespace Installment.Pages.InstallmentPayments
 
             try
             {
-                //var payment = new InstallmentPayment
-                //{
-                //    InstallmentPlanId = InstallmentPlanId, 
-                                                           
-                //};
+                
                 payments.InstallmentPlanId = InstallmentPlanId;
                 // Add the new product to the repository
                 _unitOfWork.Repository.Add(payments);
