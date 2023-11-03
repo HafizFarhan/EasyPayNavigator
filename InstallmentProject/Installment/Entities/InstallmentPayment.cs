@@ -1,5 +1,4 @@
 ﻿using EasyRepository.EFCore.Abstractions;
-using System.ComponentModel.DataAnnotations;
 
 namespace Installment.Entities
 {

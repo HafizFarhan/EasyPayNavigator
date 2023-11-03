@@ -4,15 +4,15 @@
 }
 <form method="post">
     <div class="form-group">
-        <label for="RecentAmount">Amount</label>
+        <label asp-for="payments.RecentAmount">Amount</label>
         <input type="text" class="form-control" id="RecentAmount" name="RecentAmount" asp-for="payments.RecentAmount">
     </div>
     <div class="form-group">
-        <label for="Date">Date</label>
+        <label asp-for="payments.Date">Date</label>
         <input type="datetime" class="form-control" id="Date" name="Date" asp-for="payments.Date">
     </div>
     <div class="form-group">
-        <label for="Status">Status</label>
+        <label asp-for ="payments.Status">Status</label>
         <input type="text" class="form-control" id="Status" name="Phone" asp-for="payments.Status">
     </div>
 
